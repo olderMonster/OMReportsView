@@ -1,0 +1,330 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5788FC9C1EA9D62C00197EC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5788FC9B1EA9D62C00197EC1 /* main.m */; };
+		5788FC9F1EA9D62C00197EC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5788FC9E1EA9D62C00197EC1 /* AppDelegate.m */; };
+		5788FCA21EA9D62C00197EC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5788FCA11EA9D62C00197EC1 /* ViewController.m */; };
+		5788FCA51EA9D62C00197EC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5788FCA31EA9D62C00197EC1 /* Main.storyboard */; };
+		5788FCA71EA9D62C00197EC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5788FCA61EA9D62C00197EC1 /* Assets.xcassets */; };
+		5788FCAA1EA9D62C00197EC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5788FCA81EA9D62C00197EC1 /* LaunchScreen.storyboard */; };
+		5788FCB41EA9D66000197EC1 /* OMReportsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5788FCB31EA9D66000197EC1 /* OMReportsView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5788FC971EA9D62C00197EC1 /* OMReportsView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMReportsView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5788FC9B1EA9D62C00197EC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5788FC9D1EA9D62C00197EC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5788FC9E1EA9D62C00197EC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5788FCA01EA9D62C00197EC1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5788FCA11EA9D62C00197EC1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5788FCA41EA9D62C00197EC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5788FCA61EA9D62C00197EC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5788FCA91EA9D62C00197EC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5788FCAB1EA9D62C00197EC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5788FCB21EA9D66000197EC1 /* OMReportsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMReportsView.h; sourceTree = "<group>"; };
+		5788FCB31EA9D66000197EC1 /* OMReportsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMReportsView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5788FC941EA9D62C00197EC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5788FC8E1EA9D62C00197EC1 = {
+			isa = PBXGroup;
+			children = (
+				5788FC991EA9D62C00197EC1 /* OMReportsView */,
+				5788FC981EA9D62C00197EC1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5788FC981EA9D62C00197EC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5788FC971EA9D62C00197EC1 /* OMReportsView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5788FC991EA9D62C00197EC1 /* OMReportsView */ = {
+			isa = PBXGroup;
+			children = (
+				5788FCB11EA9D66000197EC1 /* OMReportsView */,
+				5788FC9D1EA9D62C00197EC1 /* AppDelegate.h */,
+				5788FC9E1EA9D62C00197EC1 /* AppDelegate.m */,
+				5788FCA01EA9D62C00197EC1 /* ViewController.h */,
+				5788FCA11EA9D62C00197EC1 /* ViewController.m */,
+				5788FCA31EA9D62C00197EC1 /* Main.storyboard */,
+				5788FCA61EA9D62C00197EC1 /* Assets.xcassets */,
+				5788FCA81EA9D62C00197EC1 /* LaunchScreen.storyboard */,
+				5788FCAB1EA9D62C00197EC1 /* Info.plist */,
+				5788FC9A1EA9D62C00197EC1 /* Supporting Files */,
+			);
+			path = OMReportsView;
+			sourceTree = "<group>";
+		};
+		5788FC9A1EA9D62C00197EC1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5788FC9B1EA9D62C00197EC1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5788FCB11EA9D66000197EC1 /* OMReportsView */ = {
+			isa = PBXGroup;
+			children = (
+				5788FCB21EA9D66000197EC1 /* OMReportsView.h */,
+				5788FCB31EA9D66000197EC1 /* OMReportsView.m */,
+			);
+			path = OMReportsView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5788FC961EA9D62C00197EC1 /* OMReportsView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5788FCAE1EA9D62C00197EC1 /* Build configuration list for PBXNativeTarget "OMReportsView" */;
+			buildPhases = (
+				5788FC931EA9D62C00197EC1 /* Sources */,
+				5788FC941EA9D62C00197EC1 /* Frameworks */,
+				5788FC951EA9D62C00197EC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OMReportsView;
+			productName = OMReportsView;
+			productReference = 5788FC971EA9D62C00197EC1 /* OMReportsView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5788FC8F1EA9D62C00197EC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = tima;
+				TargetAttributes = {
+					5788FC961EA9D62C00197EC1 = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5788FC921EA9D62C00197EC1 /* Build configuration list for PBXProject "OMReportsView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5788FC8E1EA9D62C00197EC1;
+			productRefGroup = 5788FC981EA9D62C00197EC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5788FC961EA9D62C00197EC1 /* OMReportsView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5788FC951EA9D62C00197EC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5788FCAA1EA9D62C00197EC1 /* LaunchScreen.storyboard in Resources */,
+				5788FCA71EA9D62C00197EC1 /* Assets.xcassets in Resources */,
+				5788FCA51EA9D62C00197EC1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5788FC931EA9D62C00197EC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5788FCA21EA9D62C00197EC1 /* ViewController.m in Sources */,
+				5788FC9F1EA9D62C00197EC1 /* AppDelegate.m in Sources */,
+				5788FC9C1EA9D62C00197EC1 /* main.m in Sources */,
+				5788FCB41EA9D66000197EC1 /* OMReportsView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5788FCA31EA9D62C00197EC1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5788FCA41EA9D62C00197EC1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5788FCA81EA9D62C00197EC1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5788FCA91EA9D62C00197EC1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5788FCAC1EA9D62C00197EC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5788FCAD1EA9D62C00197EC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5788FCAF1EA9D62C00197EC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OMReportsView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.tima.OMReportsView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5788FCB01EA9D62C00197EC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OMReportsView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.tima.OMReportsView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5788FC921EA9D62C00197EC1 /* Build configuration list for PBXProject "OMReportsView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5788FCAC1EA9D62C00197EC1 /* Debug */,
+				5788FCAD1EA9D62C00197EC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5788FCAE1EA9D62C00197EC1 /* Build configuration list for PBXNativeTarget "OMReportsView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5788FCAF1EA9D62C00197EC1 /* Debug */,
+				5788FCB01EA9D62C00197EC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5788FC8F1EA9D62C00197EC1 /* Project object */;
+}

@@ -22,3 +22,5 @@ rowsDataArray是以行为单位设置数据，即该数组中得数据数量必�
     self.reportsView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 150);
 }
 
+![Image text](https://github.com/olderMonster/OMReportsView/blob/master/Simulator%20Screen%20Shot%202017%E5%B9%B44%E6%9C%8824%E6%97%A5%20%E4%B8%8B%E5%8D%881.46.48.png)
+

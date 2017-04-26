@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "42760E26D7A8AF30A4321EB076A778FE195883F6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "42760E26D7A8AF30A4321EB076A778FE195883F6" : 9223372036854775807,
+    "14D05CD30CCED51086F14B50BD90E33F3816F1E5" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E4F975F5-D734-4F4A-B03D-C788CD430A09",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "42760E26D7A8AF30A4321EB076A778FE195883F6" : "OMReportsView\/",
+    "14D05CD30CCED51086F14B50BD90E33F3816F1E5" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "OMReportsView",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "OMReportsView.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/olderMonster\/OMSegmentControl.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "14D05CD30CCED51086F14B50BD90E33F3816F1E5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/olderMonster\/OMReportsView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "42760E26D7A8AF30A4321EB076A778FE195883F6"
+    }
+  ]
+}

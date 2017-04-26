@@ -36,7 +36,8 @@
         _reportsView = [[OMReportsView alloc]init];
         _reportsView.rowNames = @[@"订单",@"PDI入库",@"批发",@"零售"];
         _reportsView.rowSubtitleNames = @[@"Order",@"Instock",@"Wholesale",@"Resale"];
-        _reportsView.colNames = @[@"当日 DTD",@"当月 MTD",@"当年 YTD"];
+        _reportsView.colNames = @[@"当日",@"当月",@"当年"];
+        _reportsView.colSubTitleNames = @[@"DTD",@"MTD",@"YTD"];
         NSArray *array = @[@[@"00",@"01",@"02",@"03"],@[@"10",@"11",@"12",@"13"],@[@"20",@"21",@"22",@"23"]];
         _reportsView.rowsDataArray = array;
         [_reportsView row:0 font:[UIFont systemFontOfSize:15] textColor:[UIColor redColor]];

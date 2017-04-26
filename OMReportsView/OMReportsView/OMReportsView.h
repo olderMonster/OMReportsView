@@ -14,6 +14,7 @@
 @property (nonatomic , strong)NSArray *rowNames; //第一行的行标题
 @property (nonatomic , strong)NSArray *rowSubtitleNames; //第一行的副标题
 @property (nonatomic , strong)NSArray *colNames; //第一列的列标题
+@property (nonatomic , strong)NSArray *colSubTitleNames;  //第一列副标题
 
 
 //数据源,一下两种方式任选一种设置即可。以最后一种赋值方式为准
@@ -45,6 +46,8 @@
 @property (nonatomic , strong)UIColor *rowSubtitleColor;
 //第一列标题的颜色
 @property (nonatomic , strong)UIColor *colTitleColor;
+//第一列副标题颜色
+@property (nonatomic , strong)UIColor *colSubtitleColor;
 
 //第一行标题的字体
 @property (nonatomic , strong)UIFont *rowTitleFont;
@@ -52,6 +55,8 @@
 @property (nonatomic , strong)UIFont *rowSubtitleFont;
 //第一列标题的字体
 @property (nonatomic , strong)UIFont *colTitleFont;
+//第一列副标题字体
+@property (nonatomic , strong)UIFont *colSubtitleFont;
 
 
 /**

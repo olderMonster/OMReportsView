@@ -16,8 +16,10 @@
 @property (nonatomic , strong)NSMutableArray *rowsSubtitleLabelArray;
 //存储行标题label（第一列标题）
 @property (nonatomic , strong)NSMutableArray *colsLabelArray;
+//存储行副标题label（第一列副标题）
+@property (nonatomic , strong)NSMutableArray *colsSubtitleLabelArray;
 
-
+//所有数据label
 @property (nonatomic , strong)NSArray *dataLabelArray;
 
 
@@ -38,7 +40,6 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        
         
     }
     return self;
@@ -73,16 +74,17 @@
     NSInteger colCount = self.rowsLabelArray.count + 1; //列数
     NSInteger rowCount = self.colsLabelArray.count + 1; //行数
     
-    CGFloat colTitleHeight = self.bounds.size.height/rowCount; //列标题的高度(可自行修改)
+    CGFloat colTitleHeight = self.bounds.size.height/rowCount; //列标题的高度(第一行标题与副标题，可自行修改)
     CGFloat itemWidth = self.bounds.size.width/colCount;  //数据文本的宽度
     CGFloat itemHeight = (self.bounds.size.height - colTitleHeight)/(rowCount - 1); //数据文本的高度
+    CGFloat firstColWidth = itemWidth; //第一列标题与副标题的宽度
     //保证副标题与主标题的高度之和是等于数据行的高度
     CGFloat rowTitleHeight = self.rowsSubtitleLabelArray.count == 0?colTitleHeight:(colTitleHeight * 0.65); //第一行标题的高度
     CGFloat rowSubTitleLabelHeight = colTitleHeight - rowTitleHeight; //第一行副标题的高度
     
     
-    //判断最长文本长度
-    CGFloat rowTitleWidth = itemWidth; //行标题的宽度
+    //计算第一列标题最长文本的宽度
+    CGFloat rowTitleWidth = 0; //行标题的宽度
     NSString *colText = nil;
     for (NSString *str in self.colNames) { //找出列头中最长的字符串
         if (colText.length < str.length) {
@@ -96,23 +98,46 @@
             font = label.font;
         }
         CGSize colSize = [colText sizeWithAttributes:@{NSFontAttributeName:font}];
-        if (colSize.width > rowTitleWidth) {
-            rowTitleWidth = colSize.width;
-            //当根据文本的宽度来设置第一列标题的宽度的时候，数据的宽度则需要根据剩下的宽度去计算；
-            if(colCount > 1){
-                itemWidth = (self.bounds.size.width -rowTitleWidth )/(colCount - 1);
-            }
+        rowTitleWidth = colSize.width + 3;
+    }
+    
+    
+    //计算第一列副标题最长文本的宽度
+    CGFloat rowSubtitleWidth = 0;
+    NSString *colSuntitle = nil;
+    for (NSString *str in self.colNames) { //找出列头副标题中最长的字符串
+        if (colSuntitle.length < str.length) {
+            colSuntitle = str;
         }
     }
+    if (colText != nil) {
+        UIFont *font = [UIFont systemFontOfSize:12];
+        if (self.colsSubtitleLabelArray.count > 0) {
+            UILabel *label = (UILabel *)self.colsSubtitleLabelArray[0];
+            font = label.font;
+        }
+        CGSize colSize = [colText sizeWithAttributes:@{NSFontAttributeName:font}];
+        rowSubtitleWidth = colSize.width + 3;
+    }
+    
+    //当第一列标题和副标题的文本长度大于等分整个view的宽度那么此时以两个宽度之和为准
+    if (rowTitleWidth + rowSubtitleWidth > itemWidth) {
+        firstColWidth = rowTitleWidth + rowSubtitleWidth;
+        if(colCount > 1){
+            //此时数据的label宽度应该等于view宽度减去列标题与副标题宽度之和后的等分值
+            itemWidth = (self.bounds.size.width - firstColWidth )/(colCount - 1);
+        }
+    }
+    
+    
     
     
     //设置第一行标题
     for (NSInteger index = 0 ; index < self.rowsLabelArray.count; index++) {
         
         UILabel *label = (UILabel *)self.rowsLabelArray[index];
-        label.frame = CGRectMake(rowTitleWidth + itemWidth * index, 0, itemWidth, rowTitleHeight);
+        label.frame = CGRectMake(firstColWidth + itemWidth * index, 0, itemWidth, rowTitleHeight);
         [self.rowsLabelArray replaceObjectAtIndex:index withObject:label];
-        
         
         //当用户设置了字体颜色
         if (self.rowTitleColor != nil) {
@@ -123,14 +148,15 @@
         if (self.rowTitleFont != nil) {
             label.font = self.rowTitleFont;
         }
-        
     }
     
-    //当副标题的个数与主标题的个数一致时才显示
+    //当第一行副标题的个数与主标题的个数一致时才显示
     if (self.rowsSubtitleLabelArray.count > 0 && (self.rowsSubtitleLabelArray.count == self.rowsLabelArray.count)) {
+        
         for (NSInteger index = 0; index < self.rowsSubtitleLabelArray.count; index++) {
+            
             UILabel *label = (UILabel *)self.rowsSubtitleLabelArray[index];
-            label.frame = CGRectMake(rowTitleWidth + itemWidth * index, rowTitleHeight, itemWidth, rowSubTitleLabelHeight);
+            label.frame = CGRectMake(firstColWidth + itemWidth * index, rowTitleHeight, itemWidth, rowSubTitleLabelHeight);
             [self.rowsSubtitleLabelArray replaceObjectAtIndex:index withObject:label];
             
             //用户设置了第一行副标题颜色
@@ -144,6 +170,7 @@
             
         }
     }
+    
     
     
     //设置行头(第一列标题)
@@ -165,6 +192,30 @@
     }
     
     
+    //当第一列副标题个数与标题个数一致的时候才显示
+    if (self.colsSubtitleLabelArray.count > 0 && (self.colsSubtitleLabelArray.count == self.colsLabelArray.count)) {
+        //设置行副标题（第一列副标题）
+        for (NSInteger index = 0; index < self.colsSubtitleLabelArray.count; index++) {
+            
+            UILabel *label = (UILabel *)self.colsSubtitleLabelArray[index];
+            label.frame = CGRectMake(rowTitleWidth, colTitleHeight + itemHeight * index, rowSubtitleWidth, itemHeight);
+            [self.colsSubtitleLabelArray replaceObjectAtIndex:index withObject:label];
+            
+            if (self.colSubtitleColor != nil) {
+                label.textColor = self.colSubtitleColor;
+            }
+            
+            if (self.colSubtitleFont != nil) {
+                label.font = self.colSubtitleFont;
+            }
+            
+        }
+        
+    }
+    
+   
+    
+    
     //以行为单位绘制数据,默认以行为单位绘制数据
     if (self.isHorizontal) {
                 
@@ -175,7 +226,7 @@
             NSMutableArray *rowDataLabelArray = [[NSMutableArray alloc]initWithArray:self.dataLabelArray[i]];
             for (NSInteger j = 0; j < rowDataLabelArray.count; j++) {
                 UILabel *label = rowDataLabelArray[j]; //第i行j列的label
-                label.frame = CGRectMake(rowTitleWidth +  itemWidth * j, colTitleHeight + itemHeight * i, itemWidth, itemHeight);
+                label.frame = CGRectMake(firstColWidth +  itemWidth * j, colTitleHeight + itemHeight * i, itemWidth, itemHeight);
                 [rowDataLabelArray replaceObjectAtIndex:j withObject:label];
             }
             [dataLabelMArray replaceObjectAtIndex:i withObject:rowDataLabelArray];
@@ -190,7 +241,7 @@
             NSMutableArray *rowDataLabelArray = [[NSMutableArray alloc]initWithArray:self.dataLabelArray[i]];
             for (NSInteger j = 0; j < rowDataLabelArray.count; j++) {
                 UILabel *label = rowDataLabelArray[j]; //第i列j行的label
-                label.frame = CGRectMake(rowTitleWidth +  itemWidth * i, colTitleHeight + itemHeight * j, itemWidth, itemHeight);
+                label.frame = CGRectMake(firstColWidth +  itemWidth * i, colTitleHeight + itemHeight * j, itemWidth, itemHeight);
                 [rowDataLabelArray replaceObjectAtIndex:j withObject:label];
             }
             [dataLabelMArray replaceObjectAtIndex:i withObject:rowDataLabelArray];
@@ -213,6 +264,7 @@
     self.rowsLabelArray = [[NSMutableArray alloc]init];
     self.rowsSubtitleLabelArray = [[NSMutableArray alloc]init];
     self.colsLabelArray = [[NSMutableArray alloc]init];
+    self.colsSubtitleLabelArray = [[NSMutableArray alloc] init];
     
     
     
@@ -254,6 +306,18 @@
         [self.colsLabelArray addObject:label];
     }
     
+    //绘制第一列副标题
+    for (NSInteger index = 0; index < self.colSubTitleNames.count; index++) {
+        
+        UILabel *label = [[UILabel alloc]init];
+        label.font = [UIFont systemFontOfSize:12];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.text = self.colSubTitleNames[index];
+        [self addSubview:label];
+        
+        [self.colsSubtitleLabelArray addObject:label];
+    }
+    
 }
 
 
@@ -281,11 +345,6 @@
     //以行绘制
     if (self.isHorizontal) {
         
-        if (row > self.dataLabelArray.count - 1 || self.dataLabelArray.count == 0) {
-            NSLog(@"设置颜色的行数超过了总行数");
-            return;
-        }
-        
         NSMutableArray *dateLabelMArray = [[NSMutableArray alloc]initWithArray:self.dataLabelArray];
         NSMutableArray *rowLabelMArray = dateLabelMArray[row];
         for (NSInteger index = 0; index < rowLabelMArray.count; index++) {
@@ -298,15 +357,6 @@
         self.dataLabelArray = [[NSArray alloc]initWithArray:dateLabelMArray];
         
     }else{
-        
-        if (self.dataLabelArray.count == 0 ) {
-            NSLog(@"设置颜色的行数超过了总行数");
-            return;
-        }else if (row > ([self.dataLabelArray[0] count] - 1)){
-            NSLog(@"设置颜色的行数超过了总行数");
-            return;
-        }
-        
         //以列绘制
         NSMutableArray *dateLabelMArray = [[NSMutableArray alloc]initWithArray:self.dataLabelArray];
         for (NSInteger index = 0; index < dateLabelMArray.count; index++) {
@@ -364,6 +414,11 @@
     [self setTable];
 }
 
+- (void)setColSubTitleNames:(NSArray *)colSubTitleNames{
+    _colSubTitleNames = colSubTitleNames;
+    [self setTable];
+}
+
 
 //设置第一行标题颜色
 - (void)setRowTitleColor:(UIColor *)rowTitleColor{
@@ -395,6 +450,16 @@
     }
 }
 
+//设置第一列副标题颜色
+- (void)setColSubtitleColor:(UIColor *)colSubtitleColor{
+    _colSubtitleColor = colSubtitleColor;
+    if (self.colsSubtitleLabelArray.count > 0) {
+        for (UILabel *label in self.colsSubtitleLabelArray) {
+            label.textColor = colSubtitleColor;
+        }
+    }
+}
+
 
 //设置第一行标题字体
 - (void)setRowTitleFont:(UIFont *)rowTitleFont{
@@ -405,8 +470,8 @@
             label.font = rowTitleFont;
         }
     }
-    
 }
+
 //设置第一行副标题字体
 - (void)setRowSubtitleFont:(UIFont *)rowSubtitleFont{
     _rowSubtitleFont = rowSubtitleFont;
@@ -416,12 +481,23 @@
         }
     }
 }
+
 //设置第一列标题字体
 - (void)setColTitleFont:(UIFont *)colTitleFont{
     _colTitleFont = colTitleFont;
     if (self.colsLabelArray.count > 0) {
         for (UILabel *label in self.colsLabelArray) {
             label.font = _colTitleFont;
+        }
+    }
+}
+
+//设置第一列副标题字体
+- (void)setColSubtitleFont:(UIFont *)colSubtitleFont{
+    _colSubtitleFont = colSubtitleFont;
+    if (self.colsSubtitleLabelArray.count > 0) {
+        for (UILabel *label in self.colsSubtitleLabelArray) {
+            label.font = colSubtitleFont;
         }
     }
 }
@@ -444,7 +520,7 @@
         for (NSInteger j = 0 ; j < array.count; j++) {
             
             UILabel *label = [[UILabel alloc] init];
-            label.font = [UIFont systemFontOfSize:11];
+            label.font = [UIFont systemFontOfSize:14];
             label.textAlignment = NSTextAlignmentCenter;
             label.text = array[j];
             [self addSubview:label];  //添加第i行第j列的数据文本
@@ -481,7 +557,7 @@
         for (NSInteger j = 0 ; j < array.count; j++) {
             
             UILabel *label = [[UILabel alloc] init];
-            label.font = [UIFont systemFontOfSize:11];
+            label.font = [UIFont systemFontOfSize:14];
             label.textAlignment = NSTextAlignmentCenter;
             label.text = array[j];
             [self addSubview:label];  //添加第i列第j行的数据文本

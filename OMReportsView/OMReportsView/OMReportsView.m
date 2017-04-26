@@ -98,6 +98,10 @@
         CGSize colSize = [colText sizeWithAttributes:@{NSFontAttributeName:font}];
         if (colSize.width > rowTitleWidth) {
             rowTitleWidth = colSize.width;
+            //当根据文本的宽度来设置第一列标题的宽度的时候，数据的宽度则需要根据剩下的宽度去计算；
+            if(colCount > 1){
+                itemWidth = (self.bounds.size.width -rowTitleWidth )/(colCount - 1);
+            }
         }
     }
     

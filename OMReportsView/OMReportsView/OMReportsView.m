@@ -281,6 +281,11 @@
     //以行绘制
     if (self.isHorizontal) {
         
+        if (row > self.dataLabelArray.count - 1 || self.dataLabelArray.count == 0) {
+            NSLog(@"设置颜色的行数超过了总行数");
+            return;
+        }
+        
         NSMutableArray *dateLabelMArray = [[NSMutableArray alloc]initWithArray:self.dataLabelArray];
         NSMutableArray *rowLabelMArray = dateLabelMArray[row];
         for (NSInteger index = 0; index < rowLabelMArray.count; index++) {
@@ -293,6 +298,15 @@
         self.dataLabelArray = [[NSArray alloc]initWithArray:dateLabelMArray];
         
     }else{
+        
+        if (self.dataLabelArray.count == 0 ) {
+            NSLog(@"设置颜色的行数超过了总行数");
+            return;
+        }else if (row > ([self.dataLabelArray[0] count] - 1)){
+            NSLog(@"设置颜色的行数超过了总行数");
+            return;
+        }
+        
         //以列绘制
         NSMutableArray *dateLabelMArray = [[NSMutableArray alloc]initWithArray:self.dataLabelArray];
         for (NSInteger index = 0; index < dateLabelMArray.count; index++) {
